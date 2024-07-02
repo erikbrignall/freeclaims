@@ -47,7 +47,7 @@ if submit_button:
 
         url = "https://europe-west2-alt24-developments.cloudfunctions.net/claims-structure"
         
-        apikey = "xxxx"
+        apikey = st.secrets["apikey"]
         request_data = {"input": query, "apikey": apikey}
 
         start_time = time.time()
