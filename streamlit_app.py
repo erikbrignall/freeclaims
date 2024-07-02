@@ -2,6 +2,7 @@ import pandas as pd
 import time
 import json
 import streamlit as st
+import requests
 
 st.set_page_config(page_title='Streamlit chat interface - DEMO')
 st.title('Streamlit chat demo - Claims data - DEMO')
