@@ -26,17 +26,16 @@ if submit_button:
         apikey = st.secrets["apikey"]
         request_data = {"input": query_text, "apikey": apikey}
 
-        start_time = time.time()
-        response = requests.post(url, json=request_data)
-        end_time = time.time()
-        response_time = end_time - start_time
-        st.write('Response Time:')
-        st.write(response_time)
-        
-        LLMresponse = response
-        st.write("Here is the JSON response:")
-
-        st.write(response.json())
-        st.write('Response Time:')
-        st.write(response_time)
-        #print(response.status_code)
+        with st.spinner('Cogs a whirrin...'):
+            start_time = time.time()
+            response = requests.post(url, json=request_data)
+            end_time = time.time()
+            response_time = end_time - start_time
+            
+            LLMresponse = response
+            st.write("Here is the JSON response:")
+    
+            st.write(response.json())
+            st.write('Response Time:')
+            st.write(response_time)
+            #print(response.status_code)
