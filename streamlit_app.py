@@ -16,34 +16,9 @@ with st.form(key='my_form_to_submit'):
     query_text = st.text_input('Enter Free text data')
     submit_button = st.form_submit_button(label='Submit')
 
-
-## The below function loops through the JSON structure and returns any value matching the key
-def extract_values(obj, key):
-        """Pull all values of specified key from nested JSON."""
-        arr = []
-
-        def extract(obj, arr, key):
-            """Recursively search for values of key in JSON tree."""
-            if isinstance(obj, dict):
-                for k, v in obj.items():
-                    if isinstance(v, (dict, list)):
-                        extract(v, arr, key)
-                    elif k == key:
-                        arr.append(v)
-            elif isinstance(obj, list):
-                for item in obj:
-                    extract(item, arr, key)
-            return arr
-
-        results = extract(obj, arr, key)
-        return results
-
-
     
 if submit_button:    
-#if query_text is not None:   
-        #print("we have a query now")
-        # FETCH RESPONSE
+
         st.write("Here is the structured data from the free text:")
 
         url = "https://europe-west2-alt24-developments.cloudfunctions.net/claims-structure"
@@ -56,10 +31,12 @@ if submit_button:
         end_time = time.time()
         response_time = end_time - start_time
         st.write('Response Time:')
-        st.write()
+        st.write(response_time)
         
         LLMresponse = response
         st.write("Here is the JSON response:")
 
         st.write(response.json())
+        st.write('Response Time:')
+        st.write(response_time)
         #print(response.status_code)
