@@ -13,7 +13,7 @@ st.write('The following is a demo of using streamlit as an interface for chat ap
 # Input Query
 with st.form(key='my_form_to_submit'):
     st.write('Please paste the free claims text to generate a structured breakdown.')
-    query_text = st.text_input('Enter Free text data')
+    query_text = st.text_area('Enter Free text data')
     submit_button = st.form_submit_button(label='Submit')
 
     
