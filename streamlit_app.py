@@ -9,10 +9,9 @@ st.title('Streamlit LLM interface demo')
 st.header('Claims data - DEMO')
 st.write('The following is a demo of using streamlit as an interface for chat apps. ')
 
-with st.sidebar:
-#    st.header['Field Descriptions']
-    st.write['Collision Type: Single']
-    st.write['Vehicles']
+st.sidebar.header['Field Descriptions']
+st.sidebar.write['Collision Type: Single']
+st.sidebar.write['Vehicles']
 
 #openai.api_key = st.secrets["OpenAIapikey"]
 
