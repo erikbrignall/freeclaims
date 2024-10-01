@@ -4,7 +4,7 @@ import json
 import streamlit as st
 import requests
 
-st.set_page_config(page_title='Streamlit chat interface - DEMO')
+st.set_page_config(page_title='Streamlit Free Claims Structure - DEMO')
 st.title('Streamlit LLM interface demo')
 st.header('Claims data - DEMO')
 st.write('The following is a demo of using streamlit as an interface for chat apps. ')
