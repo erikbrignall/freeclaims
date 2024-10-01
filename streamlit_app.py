@@ -11,8 +11,12 @@ st.write('The following is a demo of using streamlit as an interface for chat ap
 
 with st.sidebar:
     st.header('Field Descriptions')
-    st.write('Collision Type: Single')
-    st.write('Vehicles')
+    st.write('Collision Type: Classification')
+    st.write('Date: Incident date if known/ else today')
+    st.write('Vehicles: Number of vehicles involved')
+    st.write('First Party: Details of first party')
+    st.write('Third Party: Details of third parties')
+    st.write('Title: Summary Title')
 
 #openai.api_key = st.secrets["OpenAIapikey"]
 
